@@ -1,72 +1,9 @@
-# Decap CMS + Astro
+# Frontmatter CMS + Astro
 
-## Run Decap with content in Local Repo
+[Frontmatter](https://frontmatter.codes/) is a Git based CMS that let you use an admin panel - similar to WordPress - to authoring your content, like posts, pages, and other entities.  
+The UI of Frontmatter is inside VS Code.  
+You need the official [FrontMatter VS Code Extension](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-front-matter#:~:text=is%20Front%20Matter%3F-,Front%20Matter%20is%20a%20CMS%20that%20runs%20within%20Visual%20Studio,it%20straight%20in%20VS%20Code.)
 
-If you don't need to edit your conetnt from a public page,
-you can run Decap with your content in a local git repo.
-
-Migrate to Decap with your content in a remote git repo only 
-if you need to.
-
-```
-# ensure `local_backend` is true
-# in /public/admin/config.yml
-
-# run Decap
-npm run cms:local
-# that internally runs `npx decap-server`
-
-# navigate to Decap Admin
-http://localhost:4321/admin/index.html
-```
-
-## Run Decap with content in Remote Repo
-
-- Assuming the repo is on Github and deploy with Netlify
-- Deploy at least one time to Netlify
-- Enable Netlify Identity in your Netlify Site Settings UI
-- Set Decap beackend in `/public/admin/config.yml`
-  ```
-  local_backend: false
-
-  backend:
-    name: git-gateway
-    branch: master # Branch to update (optional; defaults to master)
-  ```
-- Add netlify identity widget
-  ```html
-  // in public/admin/index.html
-  <head>
-    <!-- Netlify Identity - used for auth -->
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  </head>
-
-  // in src/layouts/NetlifyIdentityWidget.astro
-  <!-- Netlify Identity - used for auth -->
-  <script is:inline src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script is:inline>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
-
-  // in src/layout/Layout.astro
-  // or in src/pages/index.astro
-  <head>
-    <NetlifyIdentityWidget />
-  </head>
-  ```
-- Commit and push/deploy to Netlify
-- Navigate to deployed `site.com/admin/index.html`
-- Create a new account by clicking Signu up
-  - Verfiy your email by clicking the link that should redirect to `yoursite.com/`
-- Now you can login also locally.
 
 
 ## Astro defaul README begin here!
