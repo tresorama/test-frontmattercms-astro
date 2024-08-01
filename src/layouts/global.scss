@@ -1,0 +1,232 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global - Token */
+:root {
+  /* Space */
+  --utopia-space--4: clamp(0.3563rem, 0.5074rem + -0.1259vi, 0.4823rem);
+  --utopia-space--3: clamp(0.475rem, 0.5995rem + -0.1037vi, 0.5787rem);
+  --utopia-space--2: clamp(0.6331rem, 0.7067rem + -0.0613vi, 0.6944rem);
+  --utopia-space--1: clamp(0.8333rem, 0.8312rem + 0.0106vi, 0.844rem);
+  --utopia-space-0: clamp(1rem, 0.975rem + 0.125vi, 1.125rem);
+  --utopia-space-1: clamp(1.2rem, 1.1401rem + 0.2996vi, 1.4996rem);
+  --utopia-space-2: clamp(1.44rem, 1.3282rem + 0.559vi, 1.999rem);
+  --utopia-space-3: clamp(1.728rem, 1.5407rem + 0.9367vi, 2.6647rem);
+  --utopia-space-4: clamp(2.0736rem, 1.7779rem + 1.4784vi, 3.552rem);
+  --utopia-space-5: clamp(2.4883rem, 2.039rem + 2.2465vi, 4.7348rem);
+  --utopia-space-6: clamp(2.986rem, 2.3209rem + 3.3255vi, 6.3115rem);
+  --utopia-space-7: clamp(3.5832rem, 2.6172rem + 4.8301vi, 8.4132rem);
+  --utopia-space-8: clamp(4.2998rem, 2.9168rem + 6.915vi, 11.2149rem);
+  --utopia-space-9: clamp(5.1598rem, 3.2019rem + 9.7896vi, 14.9494rem);
+  --utopia-space-10: clamp(6.1917rem, 3.4446rem + 13.7358vi, 19.9276rem);
+  --spacing-0: 0;
+  --spacing-xs: var(--utopia-space--4);
+  --spacing-sm: var(--utopia-space--1);
+  --spacing-md: var(--utopia-space-1);
+  --spacing-lg: var(--utopia-space-3);
+  --spacing-xl: var(--utopia-space-5);
+  --spacing-2xl: var(--utopia-space-7);
+
+  /* Font Sizes */
+  --utopia-fs--2: clamp(0.6944rem, 0.6913rem + 0.0157vw, 0.7035rem);
+  --utopia-fs--1: clamp(0.8333rem, 0.797rem + 0.1816vw, 0.9377rem);
+  --utopia-fs-0: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+  --utopia-fs-1: clamp(1.2rem, 1.0378rem + 0.8109vw, 1.6663rem);
+  --utopia-fs-2: clamp(1.44rem, 1.1683rem + 1.3585vw, 2.2211rem);
+  --utopia-fs-3: clamp(1.728rem, 1.2992rem + 2.1439vw, 2.9607rem);
+  --utopia-fs-4: clamp(2.0736rem, 1.4221rem + 3.2575vw, 3.9467rem);
+  --utopia-fs-5: clamp(2.4883rem, 1.5239rem + 4.8219vw, 5.2609rem);
+  --utopia-fs-6: clamp(2.986rem, 1.5854rem + 7.0031vw, 7.0128rem);
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-md: var(--utopia-fs-0);
+  --fs-lg: var(--utopia-fs-1);
+  --fs-xl: var(--utopia-fs-2);
+  --fs-2xl: var(--utopia-fs-3);
+  --fs-3xl: var(--utopia-fs-4);
+  --fs-4xl: var(--utopia-fs-5);
+  --fs-5xl: var(--utopia-fs-6);
+
+  /* Rdius */
+  --border-radius: 10px;
+  --border-radius-sm: 5px;
+
+
+  /* Section */
+  --section--py: var(--spacing-md);
+  --section--px: var(--spacing-md);
+  --bg-gradient-color: rgb(255, 0, 0);
+  --bg-color: hsl(223 16 9);
+  --text-color: hsla(0, 0%, 100%, 0.86);
+  --text-muted-color: hsla(0, 0%, 100%, 0.66);
+  --button-accent--color: hsl(0, 100%, 50%);
+
+}
+
+/* Global - Typo  */
+body {
+  font-family: system-ui, sans-serif;
+}
+
+h1,
+.typo--h1 {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+h2,
+.typo--h2 {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+}
+
+h3,
+.typo--h3 {
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+h4,
+.typo--h4 {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  letter-spacing: -0.0em;
+  line-height: 1.25;
+}
+
+h5,
+.typo--h5 {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: -0.0em;
+  line-height: 1.6;
+}
+
+h6,
+.typo--h6 {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: -0.0em;
+  line-height: 1.6;
+}
+
+body,
+.typo--body {
+  font-size: var(--fs-md);
+  font-weight: 400;
+  letter-spacing: -0.0em;
+  line-height: 1.6;
+}
+
+/* Global Styles - Elements */
+section {
+  padding: var(--section--py) 0;
+}
+
+a {
+  color: var(--button-accent--color);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+code {
+  font-family:
+    Menlo,
+    Monaco,
+    Lucida Console,
+    Liberation Mono,
+    DejaVu Sans Mono,
+    Bitstream Vera Sans Mono,
+    Courier New,
+    monospace;
+}
+
+
+form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @media (max-width: 30em) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  >* {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+
+  label {
+    margin-bottom: 0.5em;
+    font-size: var(--fs-xs);
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: .8em;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-sm);
+  }
+}
+
+/* Global - Layout */
+html {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+/* Background */
+html::before {
+  --bg: var(--bg-gradient-color);
+  --size: 60vw;
+  --radius: 10%;
+  --blur: calc(var(--size) * 0.25);
+  --opacity: 0.2;
+  content: "";
+  z-index: -1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: var(--size);
+  border-radius: var(--radius);
+  background: var(--bg);
+  filter: blur(var(--blur));
+  opacity: var(--opacity);
+}
+
+/* Global Styles - Misc */
+html {
+  color-scheme: dark;
+}

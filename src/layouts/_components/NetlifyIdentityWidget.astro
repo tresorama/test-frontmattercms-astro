@@ -1,0 +1,19 @@
+<!-- Netlify Identity - used for auth -->
+<script
+  is:inline
+  src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script is:inline>
+  // @ts-expect-error
+  if (window.netlifyIdentity) {
+    // @ts-expect-error
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        // @ts-expect-error
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>

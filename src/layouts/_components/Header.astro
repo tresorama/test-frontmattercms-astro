@@ -1,0 +1,36 @@
+---
+import headerNavLinks from "@data/header-nav.json";
+---
+
+<header>
+  <nav>
+    {headerNavLinks.map((link) => <a href={link.url}>{link.name}</a>)}
+  </nav>
+</header>
+
+<style lang="scss">
+  header {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid color-mix(in srgb, white 20%, var(--bg-color));
+    background: color-mix(in srgb, transparent 20%, var(--bg-color));
+    backdrop-filter: blur(5px);
+
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        padding: var(--spacing-md);
+        font-size: 1rem;
+        font-weight: 900;
+        text-decoration: none;
+        opacity: 0.7;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+</style>

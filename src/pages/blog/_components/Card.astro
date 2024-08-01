@@ -1,0 +1,58 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  body?: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<article class="card">
+  <a href={href}>
+    <span>
+      {title}
+      <span>&rarr;</span>
+    </span>
+    {body && <p>{body}</p>}
+  </a>
+</article>
+<style lang="scss">
+  .card {
+    --transition: 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    --bg-color: color-mix(in srgb, transparent 95%, var(--bg-gradient-color));
+    --bg-color--hover: color-mix(
+      in srgb,
+      transparent 85%,
+      var(--bg-gradient-color)
+    );
+    display: flex;
+    background-color: var(--bg-color);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    a {
+      width: 100%;
+      text-decoration: none;
+      line-height: 1.4;
+      padding: 1rem;
+      border-radius: var(--border-radius-sm);
+      opacity: 0.8;
+      transition: opacity var(--transition);
+    }
+    p {
+      margin: 0.5rem 0 0;
+      &:empty {
+        display: none;
+      }
+    }
+
+    &:is(:hover, :focus-within) {
+      background-color: var(--bg-color--hover);
+      a {
+        opacity: 1;
+      }
+    }
+  }
+</style>

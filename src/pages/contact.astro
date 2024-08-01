@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Contact">
+  <main>
+    <h1>Contact</h1>
+
+    <form
+      data-netlify="true"
+      name="contact"
+      method="POST"
+      netlify-honeypot="bot-field"
+      data-netlify-recaptcha="true"
+    >
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+      </p>
+      <p>
+        <label>Name <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Email <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>Age <input type="number" name="age" min="1" max="120" /></label>
+      </p>
+      <p>
+        <label>
+          Role
+          <select name="role[]" multiple>
+            <option value="leader">Leader</option>
+            <option value="follower">Follower</option>
+          </select>
+        </label>
+      </p>
+      <p>
+        <label>Message <textarea name="message"></textarea></label>
+      </p>
+      <div data-netlify-recaptcha="true"></div>
+      <p>
+        <button type="submit">Send</button>
+      </p>
+    </form>
+  </main>
+</Layout>
+
+<style lang="scss">
+  /* Page Styles */
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  main {
+    position: relative;
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  form {
+    position: relative;
+
+    .hidden {
+      display: none;
+    }
+
+    &:before {
+      --netlify-color: #05bdba;
+      content: "Netlify Forms";
+      position: absolute;
+      top: -32px;
+      right: 0;
+      height: auto;
+      padding: 0.05em 0.6em;
+      border-radius: var(--border-radius-sm);
+      background: var(--netlify-color);
+      color: white;
+      font-size: 0.75rem;
+    }
+
+    > *:has([name="name"]),
+    > *:has([name="email"]),
+    > *:has([name="age"]),
+    > *:has([name="role[]"]) {
+      grid-column: span 1;
+    }
+  }
+</style>

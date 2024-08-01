@@ -1,0 +1,50 @@
+.prose {
+  & {
+    font-size: 105%;
+  }
+
+  :is(& > *:first-child) {
+    margin-top: 0;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    margin-top: 2.5rem;
+    margin-bottom: 1.25rem;
+    font-weight: 600;
+    line-height: var(--leading-tight);
+  }
+
+  :where(p, ul, ol) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  :where(ul) :where(ul, ol) {
+    margin-top: 0;
+  }
+
+  :where(ul) {
+    list-style-type: "-  ";
+    padding-left: 1.2em;
+  }
+
+  :where(li) {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+  }
+
+  :where(blockquote, pre) {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  :where(figure, :not(figure) img, :not(figure) video) {
+    margin-top: 3em;
+    margin-bottom: 2em;
+  }
+
+  :where(figcaption) {
+    margin-top: 1.3em;
+  }
+
+}
